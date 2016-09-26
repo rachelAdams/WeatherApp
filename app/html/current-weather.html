@@ -1,5 +1,15 @@
-<div>CURRENT WEATHER</div>
-<div>Temperature: {{currentWeather.temperature}}</div>
-<div>Summary: {{currentWeather.summary}}</div>
+<h1 class="text-center">Right now</h1>
+<div class="text-center">
+    <i class="wi wi-forecast-io-{{currentWeather.icon}}"></i>
+<h1 class="text-center">{{currentWeather.temperature | number:'1.0-0'}} °F</h1>
+<h3>{{currentWeather.summary}}</h3>
 <div>Cloud coverage: {{currentWeather.cloudCover}}</div>
+</div>
 
+<style>
+    i{
+        font-size:70px;
+              padding:10px;
+      margin-top:10px;
+    }
+    </style>

@@ -1,2 +1,58 @@
-<div>TALKING BOUT THE WEATHER REPORT</div>
-<current-weather></current-weather>
+<div class="header-bar">
+    <div class="container site-title">
+        <h1>The Forecast</h1></div>
+</div>
+<nav>
+    <div class="nav-bar">
+        <div class="container">
+        <span class="menu-item">
+        <a routerLink="/" routerLinkActive="active">Right now</a>
+        </span>
+        <span class="menu-item">
+        <a routerLink="/five-day" routerLinkActive="active">Five Day Forecast</a>
+        </span>
+        
+    </div>
+    </div>
+</nav>
+<div class="container site-body">
+    <router-outlet></router-outlet>
+</div>
+
+
+<style>
+    .header-bar{
+        padding:60px 0;
+        background-image: url('../rainy.jpg');
+        background-size:cover;
+        font-size:30px;
+        background-attachment: fixed;
+        color:#fff;
+        text-align:center;
+        }
+        .site-title{
+            /*background-color:rgba(255, 195, 0, 0.5);
+            display:inline-block;
+            padding:20px 50px;*/
+        }
+        .nav-bar{
+            background-color:#222;
+            margin-bottom:30px;
+        }
+        .menu-item{
+            padding: 10px 50px 10px 0;
+            display: inline-block;
+        }
+        .menu-item a {
+            color:#ccc;
+        }
+        .menu-item a:hover {
+            color:#fff;
+            text-decoration:none;
+        }
+        .site-body{
+            margin-bottom:100px;
+        }
+       
+    
+</style>

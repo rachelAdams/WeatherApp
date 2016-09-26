@@ -12,14 +12,15 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('../rxjs-operators');
 var WeatherService = (function () {
+    //weatherUrl = 'https://api.darksky.net/forecast/cf9cd81459a4017710b133ffa3d1bcf8/42.3601,-71.0589?callback=JSONP_CALLBACK';
     function WeatherService(http, jsonp) {
         this.http = http;
         this.jsonp = jsonp;
-        this.weatherUrl = 'https://api.darksky.net/forecast/cf9cd81459a4017710b133ffa3d1bcf8/42.3601,-71.0589?callback=JSONP_CALLBACK';
     }
-    WeatherService.prototype.getCurrentForecast = function () {
+    WeatherService.prototype.getCurrentForecast = function (currentLat, currentLong) {
+        var weatherUrl = "https://api.darksky.net/forecast/cf9cd81459a4017710b133ffa3d1bcf8/" + currentLat + "," + currentLong + "?callback=JSONP_CALLBACK";
         return this.jsonp
-            .get(this.weatherUrl)
+            .get(weatherUrl)
             .map(function (res) { return res.json(); });
     };
     WeatherService = __decorate([

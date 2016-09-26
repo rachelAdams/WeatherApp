@@ -1,0 +1,47 @@
+<h1>Five day forecast</h1>
+
+<div class="weather">
+<ul >
+    <li class="col-xs-12 col-md-2 text-center" *ngFor="let day of fiveDayWeather">
+         <h1>
+            {{day?.date * 1000 | date: 'EEEE'}}
+            
+            <!--{{forecast.day}}-->
+        </h1>
+        <div>
+            {{day?.date * 1000 | date: 'MMM d'}}
+            </div>
+        <div>
+        <i class="wi wi-forecast-io-{{day.icon}}"></i>
+        </div>
+        <h3>
+            {{day?.summary}}
+        </h3>
+        
+         <div>
+            High: {{day?.temperatureMax | number:'1.0-0'}} °F
+        </div>
+         <div>
+            Low: {{day?.temperatureMin | number:'1.0-0'}} °F
+        </div>
+    </li>
+</ul>
+</div>
+
+<style>
+    ul{
+        list-style:none;
+    }
+    li{
+        padding: 20px 20px 20px 0;
+    }
+    i{
+      font-size:70px;
+      padding:10px;
+      margin-top:10px;
+    }
+    .col-centered{
+        margin: 0 auto;
+        float:none;
+    }
+    </style>
