@@ -1,15 +1,17 @@
-<h1 class="text-center">Right now</h1>
-<div class="text-center">
-    <i class="wi wi-forecast-io-{{currentWeather.icon}}"></i>
-<h1 class="text-center">{{currentWeather.temperature | number:'1.0-0'}} °F</h1>
-<h3>{{currentWeather.summary}}</h3>
-<div>Cloud coverage: {{currentWeather.cloudCover}}</div>
+<!--Page title -->
+<div class="page-title text-center">
+    <div class="container">
+        <h3>Right Now</h3>
+        <h2>{{zipCode}}</h2>  
+    </div>
 </div>
 
-<style>
-    i{
-        font-size:70px;
-              padding:10px;
-      margin-top:10px;
-    }
-    </style>
+<!--Page body -->
+<div class="container weather-body">
+    <div class="text-center">
+        <i class="wi wi-forecast-io-{{currentWeather.icon}}"></i>
+        <h1 class="text-center">{{currentWeather.temperature | number:'1.0-0'}} °F</h1>
+        <h3>{{currentWeather.summary}}</h3>
+        <div>{{currentWeather.precip | percent:'.0'}} chance of rain</div>
+    </div>
+</div>

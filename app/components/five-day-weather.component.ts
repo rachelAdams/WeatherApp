@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Http, Response } from '@angular/http';
+import { Weather } from '../components/current-weather.component';
 
 @Component({
     selector: 'five-day-weather',
     templateUrl: 'app/html/five-day-weather.html',
+    styleUrls:['app/styles/five-day-weather.css'],
     providers: [WeatherService]
 })
 export class FiveDayWeatherComponent implements OnInit { 
-    fiveDayWeather:DailyWeather[] = [];
+    fiveDayWeather:Weather[] = [];
     currentLat = 0;
     currentLong = 0;
     constructor(private weatherService: WeatherService   
@@ -34,12 +35,13 @@ export class FiveDayWeatherComponent implements OnInit {
                 var count = 0;
                 for (let day of data.daily.data){
                     if (count < 5){
-                        var forecast = new DailyWeather();
+                        var forecast = new Weather();
                         forecast.temperatureMax = day['temperatureMax'],
                         forecast.temperatureMin = day['temperatureMin'],
                         forecast.summary = day['summary'],
                         forecast.date = day['time'],
-                        forecast.icon = day['icon'];
+                        forecast.icon = day['icon'],
+                        forecast.precip = day['precipProbability']
                         
                         this.fiveDayWeather.push(forecast);
                         count ++;
@@ -50,11 +52,3 @@ export class FiveDayWeatherComponent implements OnInit {
     }
 }
 
-export class DailyWeather {
-  temperatureMin: number;
-  temperatureMax: number;
-  summary: string;
-  date: Date;
-  icon: string;
-  day: number;
-}

@@ -16,4 +16,9 @@ export class WeatherService {
          .get(weatherUrl)
             .map((res: Response) => res.json());
   }
+  
+    getLatLongFromZipCode(zipCode:string){
+        //http://maps.googleapis.com/maps/api/geocode/json?address={zipcode}
+    
+    }
 }

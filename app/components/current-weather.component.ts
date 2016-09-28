@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { Observable } from 'rxjs/Observable';
@@ -8,10 +8,12 @@ import { Http, Response } from '@angular/http';
 @Component({
     selector: 'current-weather',
     templateUrl: 'app/html/current-weather.html',
+    styleUrls:['app/styles/current-weather.css'],
     providers: [WeatherService]
 })
 export class CurrentWeatherComponent implements OnInit { 
-    currentWeather = new CurrentWeather();
+    @Input() zipCode:string;
+    currentWeather = new Weather();
     errorMessage: string;
     currentLat = 0;
     currentLong = 0;
@@ -35,19 +37,23 @@ export class CurrentWeatherComponent implements OnInit {
     getWeather():void{
          this.weatherService.getCurrentForecast(this.currentLat,this.currentLong)
             .subscribe( data => { 
-                this.currentWeather.cloudCover = data.currently.cloudCover,
                 this.currentWeather.temperature = data.currently.temperature,
                 this.currentWeather.summary = data.currently.summary,
-                this.currentWeather.icon = data.currently.icon
-                
+                this.currentWeather.icon = data.currently.icon,
+                this.currentWeather.precip = data.currently.precipProbability
             },
             err => console.error(err));
     }
 }
 
-export class CurrentWeather {
-  cloudCover: number;
+export class Weather {
   temperature: string;
   summary: string;
   icon:string;
+  precip : number;
+  temperatureMin: number;
+  temperatureMax: number;
+  date: Date;
+  day: number;
+ 
 }

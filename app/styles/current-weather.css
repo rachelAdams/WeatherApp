@@ -1,0 +1,12 @@
+i {
+  font-size: 70px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.page-title {
+  background-color: #eee;
+  padding-bottom: 10px;
+}
+.weather-body {
+  padding-top: 20px;
+}

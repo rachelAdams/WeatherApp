@@ -13,7 +13,7 @@ var weather_service_1 = require('../services/weather.service');
 var CurrentWeatherComponent = (function () {
     function CurrentWeatherComponent(weatherService) {
         this.weatherService = weatherService;
-        this.currentWeather = new CurrentWeather();
+        this.currentWeather = new Weather();
         this.currentLat = 0;
         this.currentLong = 0;
     }
@@ -32,16 +32,21 @@ var CurrentWeatherComponent = (function () {
         var _this = this;
         this.weatherService.getCurrentForecast(this.currentLat, this.currentLong)
             .subscribe(function (data) {
-            _this.currentWeather.cloudCover = data.currently.cloudCover,
-                _this.currentWeather.temperature = data.currently.temperature,
+            _this.currentWeather.temperature = data.currently.temperature,
                 _this.currentWeather.summary = data.currently.summary,
-                _this.currentWeather.icon = data.currently.icon;
+                _this.currentWeather.icon = data.currently.icon,
+                _this.currentWeather.precip = data.currently.precipProbability;
         }, function (err) { return console.error(err); });
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], CurrentWeatherComponent.prototype, "zipCode", void 0);
     CurrentWeatherComponent = __decorate([
         core_1.Component({
             selector: 'current-weather',
             templateUrl: 'app/html/current-weather.html',
+            styleUrls: ['app/styles/current-weather.css'],
             providers: [weather_service_1.WeatherService]
         }), 
         __metadata('design:paramtypes', [weather_service_1.WeatherService])
@@ -49,10 +54,10 @@ var CurrentWeatherComponent = (function () {
     return CurrentWeatherComponent;
 }());
 exports.CurrentWeatherComponent = CurrentWeatherComponent;
-var CurrentWeather = (function () {
-    function CurrentWeather() {
+var Weather = (function () {
+    function Weather() {
     }
-    return CurrentWeather;
+    return Weather;
 }());
-exports.CurrentWeather = CurrentWeather;
+exports.Weather = Weather;
 //# sourceMappingURL=current-weather.component.js.map

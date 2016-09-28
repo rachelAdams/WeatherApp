@@ -4,7 +4,6 @@ import { AppComponent }  from './app.component';
 import { CurrentWeatherComponent }  from './components/current-weather.component';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-//import './rxjs-operators';
 import {Observable} from 'rxjs';
 import { routing, appRoutingProviders }  from './app.routing';
 import {FiveDayWeatherComponent} from './components/five-day-weather.component';

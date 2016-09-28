@@ -23,6 +23,9 @@ var WeatherService = (function () {
             .get(weatherUrl)
             .map(function (res) { return res.json(); });
     };
+    WeatherService.prototype.getLatLongFromZipCode = function (zipCode) {
+        //http://maps.googleapis.com/maps/api/geocode/json?address={zipcode}
+    };
     WeatherService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, http_1.Jsonp])

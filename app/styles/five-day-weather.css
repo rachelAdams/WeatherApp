@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+}
+li {
+  padding: 20px 20px 20px 0;
+}
+@media (max-width: 991px) {
+  li {
+    border-bottom: 2px solid black;
+  }
+}
+i {
+  font-size: 70px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.col-centered {
+  margin: 0 auto;
+  float: none;
+}
+.page-title {
+  background-color: #eee;
+  padding-bottom: 10px;
+}
+.chance-rain {
+  padding-top: 10px;
+}

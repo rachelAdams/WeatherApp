@@ -1,0 +1,38 @@
+.header-bar {
+  padding: 30px 0;
+  background-image: url('../rainy.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+.site-title {
+  font-size: 40px;
+  display: inline-block;
+  padding: 30px;
+  background-color: rgba(255, 204, 0, 0.6);
+}
+.nav-bar {
+  background-color: #222;
+}
+.menu-item {
+  padding: 10px 50px 10px 0;
+  display: inline-block;
+}
+.menu-item a {
+  color: #eee;
+}
+.menu-item a:hover {
+  color: #fff;
+}
+.menu-item a .active {
+  text-decoration: underline;
+}
+.site-body {
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+.footer-bar {
+  padding: 20px 0;
+  background-color: #222;
+  color: #eee;
+}

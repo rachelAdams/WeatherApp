@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var weather_service_1 = require('../services/weather.service');
+var current_weather_component_1 = require('../components/current-weather.component');
 var FiveDayWeatherComponent = (function () {
     function FiveDayWeatherComponent(weatherService) {
         this.weatherService = weatherService;
@@ -36,12 +37,13 @@ var FiveDayWeatherComponent = (function () {
             for (var _i = 0, _a = data.daily.data; _i < _a.length; _i++) {
                 var day = _a[_i];
                 if (count < 5) {
-                    var forecast = new DailyWeather();
+                    var forecast = new current_weather_component_1.Weather();
                     forecast.temperatureMax = day['temperatureMax'],
                         forecast.temperatureMin = day['temperatureMin'],
                         forecast.summary = day['summary'],
                         forecast.date = day['time'],
-                        forecast.icon = day['icon'];
+                        forecast.icon = day['icon'],
+                        forecast.precip = day['precipProbability'];
                     _this.fiveDayWeather.push(forecast);
                     count++;
                 }
@@ -52,6 +54,7 @@ var FiveDayWeatherComponent = (function () {
         core_1.Component({
             selector: 'five-day-weather',
             templateUrl: 'app/html/five-day-weather.html',
+            styleUrls: ['app/styles/five-day-weather.css'],
             providers: [weather_service_1.WeatherService]
         }), 
         __metadata('design:paramtypes', [weather_service_1.WeatherService])
@@ -59,10 +62,4 @@ var FiveDayWeatherComponent = (function () {
     return FiveDayWeatherComponent;
 }());
 exports.FiveDayWeatherComponent = FiveDayWeatherComponent;
-var DailyWeather = (function () {
-    function DailyWeather() {
-    }
-    return DailyWeather;
-}());
-exports.DailyWeather = DailyWeather;
 //# sourceMappingURL=five-day-weather.component.js.map

@@ -1,47 +1,38 @@
-<h1>Five day forecast</h1>
-
-<div class="weather">
-<ul >
-    <li class="col-xs-12 col-md-2 text-center" *ngFor="let day of fiveDayWeather">
-         <h1>
-            {{day?.date * 1000 | date: 'EEEE'}}
-            
-            <!--{{forecast.day}}-->
-        </h1>
-        <div>
-            {{day?.date * 1000 | date: 'MMM d'}}
-            </div>
-        <div>
-        <i class="wi wi-forecast-io-{{day.icon}}"></i>
-        </div>
-        <h3>
-            {{day?.summary}}
-        </h3>
-        
-         <div>
-            High: {{day?.temperatureMax | number:'1.0-0'}} °F
-        </div>
-         <div>
-            Low: {{day?.temperatureMin | number:'1.0-0'}} °F
-        </div>
-    </li>
-</ul>
+<!--Page title -->
+<div class="page-title text-center">
+    <div class="container">
+        <h3>Five Day Forecast</h3>
+    </div>
 </div>
 
-<style>
-    ul{
-        list-style:none;
-    }
-    li{
-        padding: 20px 20px 20px 0;
-    }
-    i{
-      font-size:70px;
-      padding:10px;
-      margin-top:10px;
-    }
-    .col-centered{
-        margin: 0 auto;
-        float:none;
-    }
-    </style>
+<!--Page body -->
+<div class="container">
+    <div class="weather">
+        <ul>
+            <!-- Annoying offset for 5 columns in bootstrap -->
+            <div class="col-md-1 hidden-xs"></div> 
+            
+            <!-- Day of weather -->
+            <li class="col-xs-12 col-md-2 text-center" *ngFor="let day of fiveDayWeather">
+                
+                <!-- Day + date -->
+                <h2> {{day?.date * 1000 | date: 'EEE'}} </h2>           
+                <div> {{day?.date * 1000 | date: 'MMM d'}} </div>
+                
+                <!-- Weather icon -->                
+                <div><i class="wi wi-forecast-io-{{day.icon}}"></i> </div>
+                
+                <!-- Summary -->                
+                <h4> {{day?.summary}}  </h4>
+                
+                <!-- High + low -->                
+                <div> High: {{day?.temperatureMax | number:'1.0-0'}} °F </div>
+                <div> Low: {{day?.temperatureMin | number:'1.0-0'}} °F </div>
+                
+                <!-- Chance of rain -->                
+                <div class="chance-rain">{{day.precip | percent:'.0'}} chance of rain</div>
+                
+            </li>
+        </ul>
+    </div>
+</div>
