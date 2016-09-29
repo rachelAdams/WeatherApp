@@ -9,10 +9,19 @@
   font-size: 40px;
   display: inline-block;
   padding: 30px;
-  background-color: rgba(255, 204, 0, 0.6);
+  background-color: rgba(255, 204, 0, 0.8);
 }
 .nav-bar {
   background-color: #222;
+  padding: 20px;
+}
+.nav-bar input {
+  border: 2px white solid;
+  padding-left: 3px;
+}
+.nav-bar button {
+  background-color: #ffcc00;
+  border: 2px solid #ffcc00;
 }
 .menu-item {
   padding: 10px 50px 10px 0;

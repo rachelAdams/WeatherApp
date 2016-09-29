@@ -6,7 +6,7 @@ li {
 }
 @media (max-width: 991px) {
   li {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #ccc;
   }
 }
 i {

@@ -7,18 +7,28 @@
     background-attachment: fixed;
     text-align:center;
     }
+
 .site-title{
   font-size:40px;
       display: inline-block;
     padding: 30px;
-    //background-color:rgba(25, 25, 25, 0.6);
-    //color:#eee;
-    background-color:@yellow;
+    background-color:fadeout(@yellow, 20%);
 }
+
 .nav-bar{
     background-color:@darkest-grey;
-    // margin-bottom:30px;
+    padding:20px;
+    
+    input{
+        border:2px white solid;
+        padding-left:3px;
+    }
+    button{
+        background-color:@yellow;
+        border: 2px solid @yellow;
+    }
 }
+
 .menu-item{
     padding: 10px 50px 10px 0;
     display: inline-block;

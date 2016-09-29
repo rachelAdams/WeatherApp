@@ -14,7 +14,6 @@ var app_component_1 = require('./app.component');
 var current_weather_component_1 = require('./components/current-weather.component');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
-var app_routing_1 = require('./app.routing');
 var five_day_weather_component_1 = require('./components/five-day-weather.component');
 var AppModule = (function () {
     function AppModule() {
@@ -24,11 +23,9 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                http_1.JsonpModule,
-                app_routing_1.routing
+                http_1.JsonpModule
             ],
             declarations: [app_component_1.AppComponent, current_weather_component_1.CurrentWeatherComponent, five_day_weather_component_1.FiveDayWeatherComponent],
-            providers: [app_routing_1.appRoutingProviders],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

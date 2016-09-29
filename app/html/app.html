@@ -9,22 +9,23 @@
 <nav>
     <div class="nav-bar">
         <div class="container">
-            <span class="menu-item">
-                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Right now</a>
-            </span>
-            <span class="menu-item">
-                <a routerLink="/five-day" routerLinkActive="active">Five Day Forecast</a>
-            </span>
-            <input [ngModel]="zipCode" />
+            <input [(ngModel)]="zipCode" placeholder="Zipcode" (keyup.enter)="submitZipcode()" />
+            <button (click)="submitZipcode()">Go</button>
         </div>
     </div>
 </nav>
 
 <!-- Site body container -->
 <div class="site-body">
-    <router-outlet ></router-outlet>
 
-    
+    <!-- Error message -->
+    <div [hidden]="!errorMsg" class="container">
+        <h2>Whoa. <br>Something went very wrong: {{errorMsg}}.</h2>
+    </div>
+
+    <!-- Forecast views -->
+    <current-weather [hidden]="errorMsg" [currentWeather]="currentWeather" [displayZipCode]="displayZipCode"></current-weather>
+    <five-day-weather [hidden]="errorMsg" [fiveDayWeather]="fiveDayWeather" [displayZipCode]="displayZipCode"></five-day-weather>
 </div>
 
 <!-- Footer -->
