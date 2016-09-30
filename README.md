@@ -11,5 +11,5 @@ npm start
 ```
 
 ##About the app
-This a weather app that gives you the current and five day forecast based on your location (if it's enabled), or a zip code. 
+This is a weather app that gives you current and five day forecasts based on your location (if it's enabled), or a zip code. 
 If location is not enabled, there is default data on load, and a zip code can be provided.
