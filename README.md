@@ -1,4 +1,6 @@
 # WeatherApp
+##See it in action
+Check out https://the-forecast.azurewebsites.net/ to see the app live!
 
 ##Setup
 Install all packages with
