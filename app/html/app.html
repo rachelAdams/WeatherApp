@@ -9,8 +9,8 @@
 <nav>
     <div class="nav-bar">
         <div class="container">
-            <input [(ngModel)]="zipCode" placeholder="Zipcode" (keyup.enter)="submitZipcode()" />
-            <button (click)="submitZipcode()">Go</button>
+            <input [(ngModel)]="zipCode" placeholder="Zip code" (keyup.enter)="getWeatherForInputZipcode()" />
+            <button (click)="getWeatherForInputZipcode()">Go</button>
         </div>
     </div>
 </nav>
