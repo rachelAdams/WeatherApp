@@ -18,6 +18,8 @@
 .nav-bar input {
   border: 2px white solid;
   padding-left: 3px;
+  vertical-align: bottom;
+  height: 26px;
 }
 .nav-bar button {
   background-color: #ffcc00;
